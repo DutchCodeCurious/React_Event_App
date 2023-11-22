@@ -1,6 +1,13 @@
-import React from 'react';
-import { Heading } from '@chakra-ui/react';
+import React from "react";
+import { Heading } from "@chakra-ui/react";
+
+//style
+import "./EventPage.css";
 
 export const EventPage = () => {
-  return <Heading>Event</Heading>;
+  return (
+    <div>
+      <Heading>Event</Heading>
+    </div>
+  );
 };
