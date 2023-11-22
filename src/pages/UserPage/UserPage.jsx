@@ -1,26 +1,23 @@
-import { useAppContext } from "../../context/DbContext";
-
-// style
 import "./UserPage.css";
+import { useAppContext } from "../../context/DbContext";
+import { ChooseUser } from "./ChooseUser/ChooseUser";
+import { UserInfoPage } from "./UserInfo/UserInfoPage";
+import { useState } from "react";
 
 export const UserPage = () => {
-  const { users, loading, events, setActiveUser, activeUser } = useAppContext();
+  const { users, loading, events, categories, activeUser, setActiveUser } =
+    useAppContext();
+
+  const [change, setChange] = useState(false);
 
   if (loading) {
     return <div>Loading...</div>;
   }
+  if (!activeUser || change) {
+    return <ChooseUser setChange={setChange} />;
+  }
 
-  return (
-    <div>
-      <h1>UserPage</h1>
-      <div>Welkom, {activeUser ? activeUser.name : "Gast"}!</div>
-      <ul>
-        {users.map((user) => (
-          <div key={user.id} onClick={() => setActiveUser(user)}>
-            {user.name}
-          </div>
-        ))}
-      </ul>
-    </div>
-  );
+  if (activeUser) {
+    return <UserInfoPage setChange={setChange} />;
+  }
 };

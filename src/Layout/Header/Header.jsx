@@ -39,8 +39,8 @@ export const Header = () => {
             </li>
           ) : (
             <li>
-              <NavLink className="buttons-head" to="/">
-                Login
+              <NavLink className="buttons-head" to="user">
+                user
               </NavLink>
             </li>
           )}
