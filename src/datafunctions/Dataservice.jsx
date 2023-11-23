@@ -18,6 +18,10 @@ export function getUser(id) {
   return axios.get(`${BASE_URL}/users/?id=${id}`);
 }
 
+export function getUserByName(name) {
+  return axios.get(`${BASE_URL}/users?q=${name}`);
+}
+
 export function getCategories() {
   return axios.get(`${BASE_URL}/categories`);
 }

@@ -9,6 +9,21 @@
       "id": 2,
       "name": "Jane Bennett",
       "image": "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb401d7131c760ca1c63_Elieska%20Lensink.jpg"
+    },
+    {
+      "name": "Joppe Petit",
+      "image": "/src/images/man.png",
+      "id": 3
+    },
+    {
+      "name": "Linde Petit",
+      "image": "/src/images/woman.png",
+      "id": 4
+    },
+    {
+      "name": "Roland Petit",
+      "image": "/src/images/man.png",
+      "id": 5
     }
   ],
   "events": [
@@ -64,34 +79,6 @@
       "location": "Shavasana Yoga School",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z"
-    },
-    {
-      "createdBy": 1,
-      "title": "kiezen",
-      "description": "Verkiezen",
-      "image": "/src/images/defaultEvent.png",
-      "categoryIds": [],
-      "location": "Gouda",
-      "startTime": "2023-11-22T20:26",
-      "endTime": "2023-11-22T21:00",
-      "id": 5
-    },
-    {
-      "createdBy": 1,
-      "title": "kiezen",
-      "description": "Verkiezen",
-      "image": "/src/images/defaultEvent.png",
-      "categoryIds": [
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "location": "Gouda",
-      "startTime": "2023-11-22T20:26",
-      "endTime": "2023-11-22T21:00",
-      "id": 6
     }
   ],
   "categories": [
@@ -106,26 +93,6 @@
     {
       "name": "relaxation",
       "id": 3
-    },
-    {
-      "name": "kies",
-      "id": 4
-    },
-    {
-      "name": "kruis",
-      "id": 5
-    },
-    {
-      "name": "kleur",
-      "id": 6
-    },
-    {
-      "name": "geuren",
-      "id": 7
-    },
-    {
-      "name": "pizza",
-      "id": 8
     }
   ]
 }

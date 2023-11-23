@@ -1,9 +1,11 @@
 import "./ChooseUser.css";
 import { useAppContext } from "../../../context/DbContext";
-
+import { useState } from "react";
+import { AddUser } from "../../../components/AddUser/AddUser";
 export const ChooseUser = ({ setChange }) => {
   const { users, loading, events, categories, activeUser, setActiveUser } =
     useAppContext();
+  const [add, setAdd] = useState(false);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -24,6 +26,10 @@ export const ChooseUser = ({ setChange }) => {
           </div>
         ))}
       </ul>
+      <div className="add_section">
+        <button onClick={() => setAdd(true)}>Add User</button>
+        {add ? <AddUser /> : null}
+      </div>
     </>
   );
 };
