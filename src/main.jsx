@@ -12,7 +12,6 @@ import { EventPage } from "./pages/EventPage/EventPage";
 import { EventsPage } from "./pages/EventsPage/EventsPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { FormPage } from "./pages/FormPage/FormPage";
-import { UsersPage } from "./pages/UsersPage/UsersPage";
 import { UserPage } from "./pages/UserPage/UserPage";
 
 const router = createBrowserRouter([
@@ -31,17 +30,10 @@ const router = createBrowserRouter([
         // loader: ,
       },
       {
-        path: "/event/:eventId",
+        path: "/event/:id",
         element: <EventPage />,
         // loader: postLoader,
         // action: addComment,
-      },
-      {
-        /*
-        path: "/Users",
-        element: <UsersPage />,
-        // loader: ,
-    */
       },
       {
         path: "/User",

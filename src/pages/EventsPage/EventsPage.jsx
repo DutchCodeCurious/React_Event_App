@@ -4,6 +4,7 @@ import { useAppContext } from "../../context/DbContext";
 
 //style
 import "./EventsPage.css";
+import { Link } from "react-router-dom";
 
 export const EventsPage = () => {
   const { events, loading } = useAppContext();
@@ -16,7 +17,17 @@ export const EventsPage = () => {
       <Heading>List of events</Heading>
       <ul>
         {events.map((event) => (
-          <li key={event.id}> {event.title} </li>
+          <li key={event.id}>
+            {" "}
+            <Link
+              className="event_link"
+              to={`/event/` + event.id.toString()}
+              key={event.id}
+            >
+              {" "}
+              {event.title}{" "}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
