@@ -79,6 +79,52 @@
       "location": "Shavasana Yoga School",
       "startTime": "2023-03-09T06:00:00.000Z",
       "endTime": "2023-03-09T07:00:00.000Z"
+    },
+    {
+      "createdBy": 3,
+      "title": "Film",
+      "description": "napoleon",
+      "image": "/src/images/defaultEvent.png",
+      "categoryIds": [
+        4,
+        5,
+        6
+      ],
+      "location": "pathe Rotterdam",
+      "startTime": "2023-11-24T12:51",
+      "endTime": "2023-11-24T18:51",
+      "id": 5
+    },
+    {
+      "createdBy": 3,
+      "title": "Theater",
+      "description": "Voorstelling met spel",
+      "image": "/src/images/defaultEvent.png",
+      "categoryIds": [
+        7,
+        8,
+        5
+      ],
+      "location": "Goudes Schouwburg",
+      "startTime": "2023-11-30T12:55",
+      "endTime": "2023-12-01T12:55",
+      "id": 6
+    },
+    {
+      "createdBy": 4,
+      "title": "Bouwen",
+      "description": "Meten is weten",
+      "image": "/src/images/defaultEvent.png",
+      "categoryIds": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "location": "Rotterdam",
+      "startTime": "2023-12-24T14:50",
+      "endTime": "2024-04-24T14:50",
+      "id": 7
     }
   ],
   "categories": [
@@ -93,6 +139,42 @@
     {
       "name": "relaxation",
       "id": 3
+    },
+    {
+      "name": "film",
+      "id": 4
+    },
+    {
+      "name": "kijken",
+      "id": 5
+    },
+    {
+      "name": "popcorn",
+      "id": 6
+    },
+    {
+      "name": "theater",
+      "id": 7
+    },
+    {
+      "name": "zitten",
+      "id": 8
+    },
+    {
+      "name": "bouwen",
+      "id": 9
+    },
+    {
+      "name": "meten",
+      "id": 10
+    },
+    {
+      "name": "rekenen",
+      "id": 11
+    },
+    {
+      "name": "ontwerpen",
+      "id": 12
     }
   ]
 }

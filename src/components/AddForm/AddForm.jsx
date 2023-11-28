@@ -4,6 +4,7 @@ import axios from "axios";
 import { formReducer, INITIAL_STATE } from "./FormReducer";
 import defaultEvent from "../../images/defaultEvent.png";
 import { useAppContext } from "../../context/DbContext";
+//import { useHistory } from "react-router-dom";
 
 //make updateCategories, getCategoryId
 //make images folder in src
@@ -11,8 +12,7 @@ import { useAppContext } from "../../context/DbContext";
 const AddForm = () => {
   const [state, dispatch] = useReducer(formReducer, INITIAL_STATE);
   const catRef = useRef();
-  const { activeUser } = useAppContext();
-  console.log(activeUser);
+  const { activeUser, setEvents } = useAppContext();
 
   const handleChange = (e) => {
     dispatch({
@@ -74,6 +74,9 @@ const AddForm = () => {
     //make it localhost:3000 to work
     axios.post(`http://localhost:3000/events`, state.events);
     console.log("new event is made");
+    axios.get(`http://localhost:3000/events`).then((response) => {
+      setEvents(response.data);
+    });
   };
   return (
     <div>

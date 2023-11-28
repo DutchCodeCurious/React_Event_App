@@ -13,6 +13,7 @@ import { EventsPage } from "./pages/EventsPage/EventsPage";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { FormPage } from "./pages/FormPage/FormPage";
 import { UserPage } from "./pages/UserPage/UserPage";
+import { AlterForm } from "./pages/EventPage/AlterForm/AlterForm";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
       {
         path: "/event/:id",
         element: <EventPage />,
-        // loader: postLoader,
-        // action: addComment,
+        children: [
+          {
+            path: "alter",
+            element: <AlterForm />,
+          },
+        ],
       },
       {
         path: "/User",
