@@ -10,6 +10,7 @@ import "./EventPage.css";
 import { useParams } from "react-router-dom";
 import { EventDetails } from "./EventDetails";
 import { HStack } from "@chakra-ui/react";
+import { AlterForm } from "./AlterForm/AlterForm";
 
 export const EventPage = () => {
   const { events, loading } = useAppContext();
@@ -38,11 +39,14 @@ export const EventPage = () => {
   return (
     <div>
       <h1>EventPage</h1>
-      <EventDetails event={event} />
-      <DeleteButton clickFN={DeleteEvent} />
-      <AlterButton clickFN={() => AlterEvent()} />
-      <Outlet />
+      {alter && (
+        <>
+          <EventDetails event={event} />
+          <DeleteButton clickFN={DeleteEvent} />
+          <AlterButton clickFN={() => AlterEvent()} />
+        </>
+      )}{" "}
+      {!alter && <AlterForm id={event.id} />}
     </div>
   );
 };
-// {alter ? <AlterForm id={event.id} /> : }

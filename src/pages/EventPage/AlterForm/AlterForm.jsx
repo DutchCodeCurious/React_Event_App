@@ -1,6 +1,10 @@
 import { useAppContext } from "../../../context/DbContext";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+  formReducer,
+  INITIAL_STATE,
+} from "../../../components/AddForm/FormReducer";
 export const AlterForm = () => {
   const { id } = useParams();
   const { events, categories } = useAppContext();
@@ -25,38 +29,45 @@ export const AlterForm = () => {
     setCurrentId(event.id);
   }, [id]);
 
+  useEffect(() => {
+    if (event) {
+      setFormValues({
+        events: {
+          createdBy: event.createdBy,
+          title: event.title,
+          description: event.description,
+          image: event.image,
+          categoryIds: event.categoryIds,
+          location: event.location,
+          startTime: event.startTime,
+          endTime: event.endTime,
+        },
+      });
+    }
+  }, [event]);
+  console.log(categories);
+  console.log(event.categoryIds);
+
   const makeDate = async (date) => {
     const newDate = new Date(date).toISOString().slice(0, 16);
     return newDate;
   };
 
-  useEffect(() => {
-    setFormValues({
-      events: {
-        createdBy: event.createdBy,
-        title: event.title,
-        description: event.description,
-        image: event.image,
-        categoryIds: event.categoryIds,
-        location: event.location,
-        startTime: event.startTime,
-        endTime: event.endTime,
-      },
-    });
-  }, [currentId]);
-  console.log(categories);
-  console.log(event.categoryIds);
   {
     /** 
   const catDisplay = ({ prop }) => {
     console.log(prop);
-    return prop
-      .map((id) => {
-        const cat = categories.find((cat) => cat.id == id);
-        return cat ? cat.name : "";
-      })
-      .join(", ");
+    return console.log(
+      prop
+        .map((id) => {
+          const cat = categories.find((cat) => cat.id == id);
+          return cat ? cat.name : "";
+        })
+        .join(", ")
+    );
   };
+
+  catDisplay({ prop: event.categoryIds });
 */
   }
   return (
@@ -81,7 +92,12 @@ export const AlterForm = () => {
           <textarea
             type="text"
             name="categoryIds"
-            value={formValues.events.categoryIds}
+            value={formValues.events.categoryIds
+              .map((id) => {
+                const cat = categories.find((cat) => cat.id == id);
+                return cat ? cat.name : "";
+              })
+              .join(", ")}
           />
           <label>Location</label>
           <input
